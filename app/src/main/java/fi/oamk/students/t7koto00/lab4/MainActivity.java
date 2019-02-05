@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private PartArrayAdapter partArrayAdapter;
     ArrayList<WorkoutPartBase> WorkoutPartBase = new ArrayList<>();
     ListView listView1 = null;
-    int totalLenght = 0;
+    int totalLength = 0;
 
 
     @Override
@@ -83,12 +83,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (requestCode == ADD_NEW_PART_REQ_ID && resultCode == RESULT_OK) {
             WorkoutPartBase workoutPartBase = (WorkoutPartBase) data.getSerializableExtra("DATA");
             WorkoutPartBase.add(workoutPartBase);
-            totalLenght = 0;
+            totalLength = 0;
             for (int i = 0; i < WorkoutPartBase.size(); i++) {
                 WorkoutPartBase part = WorkoutPartBase.get(i);
-                totalLenght = totalLenght + part.getLength();
+                totalLength = totalLength + part.getLength();
             }
-            textView1.setText("Total lenght: " + totalLenght + " seconds.");
+            textView1.setText("Total length: " + totalLength + " seconds.");
         }
     }
 }
